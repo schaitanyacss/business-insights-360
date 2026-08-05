@@ -53,29 +53,7 @@ The Power BI solution uses a relational **semantic model** consisting of fact ta
 
 ### Simplified Data Model
 
-```
-                             ┌─────────────────┐
-                             │    dim_date     │
-                             └────────┬────────┘
-                                      │
-              ┌───────────────────────┼────────────────────────┐
-              │                       │                        │
-              ▼                       ▼                        ▼
-     ┌────────────────┐     ┌──────────────────┐     ┌─────────────────┐
-     │ fact_sales_    │     │ fact_forecast_   │     │ fact_actuals_   │
-     │ monthly        │     │ monthly          │     │ forecasts       │
-     └───────┬────────┘     └────────┬─────────┘     └────────┬────────┘
-             │                       │                        │
-             └───────────────┬───────┴───────────────┬────────┘
-                              │                        │
-                     ┌────────▼────────┐      ┌───────▼────────┐
-                     │  dim_customer   │      │  dim_product   │
-                     └─────────────────┘      └───────┬────────┘
-                                                        │
-                                               ┌───────▼────────┐
-                                               │   dim_market   │
-                                               └────────────────┘
-```
+![](images/data_model.jpg)
 
 The model uses shared dimensions such as **Date, Customer, Product, and Market** to provide consistent filtering and analysis across sales, finance, and supply-chain metrics.
 
@@ -85,60 +63,13 @@ AtliQ Hardware follows a **September–August fiscal year** rather than a Januar
 
 ---
 
-## 💡 3. Executive Summary
+## 💡 Executive Summary
 
-The Power BI solution integrates three major analytical perspectives.
-
-### 📈 Sales Analytics
-The Sales dashboard evaluates:
-- Net sales
-- Customer contribution
-- Product-segment performance
-- Market and regional performance
-- Gross margin
-- Sales growth
-- Target and benchmark performance
-
-### 💰 Finance Analytics
-The Finance dashboard provides a P&L-oriented view of:
-
-```
-Gross Sales
-     ↓
-Pre-Invoice Deductions
-     ↓
-Net Invoice Sales
-     ↓
-Post-Invoice Deductions
-     ↓
-Net Sales
-     ↓
-COGS
-     ↓
-Gross Margin
-     ↓
-OPEX
-     ↓
-Net Profit
-```
-
-### 📦 Supply Chain Analytics
-The Supply Chain dashboard connects demand forecasting with operational risk through:
-- Forecast quantity
-- Actual sales quantity
-- Net forecast error
-- Absolute error
-- Forecast accuracy
-- YoY forecast accuracy
-- Product-level forecast performance
-- Customer-level forecast performance
-- Excess Stock / Out of Stock classification
-
-Together, these views provide a unified perspective of **revenue, profitability, demand, and inventory performance**.
-
+AtliQ Hardware is **scaling revenue faster than it is scaling profit**. FY2019 was the only year in the dataset with a positive net profit (**+$2.46M**), while **COGS consumes 59–63% of net sales** and nearly **half of gross sales is lost to deductions** before it ever reaches the bottom line. Growth is also concentrated: the **top 3 product segments drive ~79% of revenue**, and just **3 customers account for roughly a third of sales** — while **Desktop** emerged as a breakout category, surging from **$0.95M (FY2020) → $46.43M (FY2021)**. A sharp COVID-era demand shock (**$22.15M → $2.76M** in a single month) further exposed gaps in forecast accuracy and inventory planning.
+ 
 ---
 
-## 📊 4. Key Business Insights
+## 📊 Key Insights
 
 ### 4.1 Sales Show a Recurring Seasonal Pattern
 The monthly sales trend generally shows an increase during the early fiscal-year period, particularly from **September through December**, followed by a sharp decline around January and a comparatively stable period through the following months.
@@ -203,7 +134,7 @@ The Supply Chain analysis combines actual demand, forecast demand, forecast erro
 
 ---
 
-## 🎯 5. Recommendations
+## 🎯 Recommendations
 
 | # | Recommendation | Action |
 |---|---|---|
@@ -217,125 +148,18 @@ The Supply Chain analysis combines actual demand, forecast demand, forecast erro
 
 ---
 
-## 🛠 6. Tech Stack
+## 🛠 Tech Stack
 
-### Business Intelligence
 - **Microsoft Power BI** — interactive dashboards, data visualization, semantic modeling, executive reporting, drill-down and cross-filtering
-
-### Data Transformation
 - **Power Query / M** — data extraction, cleaning, transformation, and preparation
-
-### Data Modeling
 - **Power BI Semantic Model** — fact/dimension architecture, relationships, fiscal calendar, target & benchmark modeling, supporting analytical tables
-
-### Analytics
-- **DAX** — KPI development, P&L calculations, gross margin, net profit, YoY analysis, YTD/YTG calculations, forecast accuracy & error, benchmark comparisons
-
-### Database
+- **DAX & DAX Studio** — KPI development, P&L calculations, gross margin, net profit, YoY analysis, YTD/YTG calculations, forecast accuracy & error, benchmark comparisons, performance optimization
 - **MySQL** — sales data, forecast data, customer & product dimensions, cost data, deduction data
 
 ---
 
-## 🏗️ 7. Dashboard Architecture
+## ⚠️ Caveats & Assumptions
 
-```
-                             ATLIQ HARDWARE
-                                   │
-                    ┌──────────────┼──────────────┐
-                    │              │              │
-                   SALES         FINANCE      SUPPLY CHAIN
-                    │              │              │
-              Customers          P&L          Forecast
-              Products           COGS         Accuracy
-              Markets            GM           Error
-              Revenue            OPEX         Inventory
-              GM                 Profit       Risk
-                    │              │              │
-                    └──────────────┼──────────────┘
-                                   │
-                           EXECUTIVE DECISIONS
-```
-
-### 📈 Sales Dashboard
-Customer performance · Product performance · Market performance · Revenue · Gross margin · Growth trends
-
-### 💰 Finance Dashboard
-Gross sales · Net sales · COGS · Gross margin · OPEX · Net profit · P&L performance
-
-### 📦 Supply Chain Dashboard
-Forecast quantity · Actual quantity · Forecast accuracy · Forecast error · Customer-level & product-level forecast performance · Excess Stock · Out of Stock
-
-### 🌍 Market Share Analysis
-Competitive analysis across markets, regions, manufacturers, product categories, fiscal years, and sub-zones
-
----
-
-## ⚠️ 8. Caveats & Assumptions
-
-- **8.1 — 2022_EST Is Not a Fully Comparable Historical Year:** The model contains a `2022_EST` period with YTD/YTG logic; 2022 figures should not be automatically compared with completed historical fiscal years.
-- **8.2 — Insights Are Descriptive Rather Than Causal:** The dashboard identifies patterns and relationships (e.g., the March 2020 decline coinciding with COVID-19) but does not establish causality.
-- **8.3 — Forecast Accuracy Depends on the Project's Metric Definition:** Calculated using project-specific DAX methodology; not automatically equivalent to MAPE, WAPE, MAE, or RMSE.
-- **8.4 — Inventory Classifications Follow Business Rules:** `ES` and `OOS` are analytical classifications based on internal business logic, not independently verified operational root causes.
-- **8.5 — Concentration Metrics Are Filter-Dependent:** Customer, product, and market concentration can change depending on fiscal-year, YTD/YTG, and other filter selections.
-- **8.6 — Source Data Quality:** Analysis assumes accurate, consistently maintained source data; potential issues (missing transactions, duplicates, mapping errors) could affect reported KPIs.
-
----
-
-## 💼 9. Business Value
-
-The primary value of this project is not simply the creation of dashboards — it is the integration of **Sales, Finance, and Supply Chain analytics into one decision-support environment**.
-
-Instead of asking only *"How much did we sell?"*, the solution enables management to investigate:
-
-- Where are we growing?
-- How profitable is that growth?
-- Which customers and products drive the business?
-- Where are we losing revenue through deductions?
-- How accurate are our forecasts?
-- Where are inventory risks emerging?
-
-This shifts reporting from descriptive monitoring toward **action-oriented business intelligence**.
-
----
-
-## 🏆 10. Key Takeaway
-
-> **AtliQ Hardware is experiencing significant revenue growth, but growth alone is not translating proportionally into profitability and operational efficiency.**
-
-Strategic priorities highlighted by the analysis:
-- Improve margin quality
-- Reduce commercial leakage
-- Monitor customer concentration
-- Optimize high-growth product categories
-- Improve forecast reliability
-- Align inventory with demand
-- Evaluate markets on profitability as well as revenue
-- Build resilience against demand shocks
-
-The project demonstrates how Power BI can be used not merely to visualize business data, but to connect **commercial performance, financial outcomes, and supply-chain execution** into a coherent decision-making framework.
-
----
-
-## 🧠 Skills Demonstrated
-
-Business Intelligence · Power BI Dashboard Development · Power BI Semantic Modeling · DAX · Power Query / M · SQL / MySQL · Data Transformation · Data Modeling · Sales Analytics · Financial Analytics · P&L Analysis · Gross Margin Analysis · Supply Chain Analytics · Forecast Accuracy Analysis · Inventory Risk Analysis · KPI Development · Executive Reporting · Business Insight Generation · Data-Driven Recommendations
-
----
-
-## 📁 Project Type
-
-**End-to-End Business Intelligence & Analytics Project**
-
-| | |
-|---|---|
-| **Domain** | Consumer Electronics / FMCG / Retail |
-| **Primary Tool** | Microsoft Power BI |
-| **Supporting Technologies** | SQL, Power Query, DAX |
-| **Focus Areas** | Sales, Finance, Profitability, Forecasting & Supply Chain |
-
----
-
-## 👤 Author
-
-**[Your Name]** | [LinkedIn](#) | [Portfolio](#)
-<!-- Replace # with your actual profile links -->
+- **2022_EST:** The model contains a `2022_EST` period with YTD/YTG logic; 2022 figures should not be automatically compared with completed historical fiscal years.
+- **Insight assumption:** The dashboard identifies patterns and relationships (e.g., the March 2020 decline coinciding with COVID-19) but does not establish causality.
+- **Inventory classifications rules:** `ES` and `OOS` are analytical classifications based on internal logic, not independently verified operational root causes.
