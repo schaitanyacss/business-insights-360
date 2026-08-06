@@ -1,4 +1,4 @@
-# 💻 AtliQ Hardware — Business Intelligence & Supply Chain Analytics
+# 💻 Business Intelligence & Supply Chain Analytics
 
 > An end-to-end Business Intelligence project transforming fragmented business data into an interactive analytical solution for executive decision-making across **Sales, Finance, and Supply Chain**.
 
@@ -15,11 +15,11 @@
 
 AtliQ Hardware is a consumer electronics company operating across multiple countries and experiencing rapid business growth.
 
-As the organization expanded, management continued to rely heavily on **Excel-based reporting** — a slow, hard-to-scale process with no centralized KPIs and limited visibility into market, customer, and profitability trends. A significant setback in the **Latin American market** further highlighted the need for stronger, data-driven decision-making.
+As the organization expanded, management continued to rely heavily on **Excel-based reporting** - a slow, hard-to-scale process with no centralized KPIs and limited visibility into market, customer, and profitability trends. A significant setback in the **Latin American market** further highlighted the need for stronger, data-driven decision-making.
 
 ### 🎯 Project Objective
 
-The objective of this project was to build a centralized Power BI analytics solution that lets management **monitor sales and profitability, evaluate customers/products/markets, track gross margin, compare performance against targets, and analyze forecast accuracy and inventory risk (Excess Stock / Out of Stock)** — turning raw operational data into actionable recommendations.
+The objective of this project was to build a centralized Power BI analytics solution that lets management **monitor sales and profitability, evaluate customers/products/markets, track gross margin, compare performance against targets, and analyze forecast accuracy and inventory risk (Excess Stock / Out of Stock)**, turning raw operational data into actionable recommendations.
 
 ---
 
@@ -65,96 +65,51 @@ AtliQ Hardware follows a **September–August fiscal year** rather than a Januar
 
 ## 💡 Executive Summary
 
-AtliQ Hardware is **scaling revenue faster than it is scaling profit**. FY2019 was the only year in the dataset with a positive net profit (**+$2.46M**), while **COGS consumes 59–63% of net sales** and nearly **half of gross sales is lost to deductions** before it ever reaches the bottom line. Growth is also concentrated: the **top 3 product segments drive ~79% of revenue**, and just **3 customers account for roughly a third of sales** — while **Desktop** emerged as a breakout category, surging from **$0.95M (FY2020) → $46.43M (FY2021)**. A sharp COVID-era demand shock (**$22.15M → $2.76M** in a single month) further exposed gaps in forecast accuracy and inventory planning.
+AtliQ Hardware is **scaling revenue faster than it is scaling profit**. FY2019 was the only year in the dataset with a positive net profit (**+$2.46M**), while **COGS consumes 59–63% of net sales** and nearly **half of gross sales is lost to deductions** before it ever reaches the bottom line. Growth is also concentrated: the **top 3 product segments drive ~79% of revenue**, and just **3 customers account for roughly a third of sales**, while **Desktop** emerged as a breakout category, surging from **$0.95M (FY2020) → $46.43M (FY2021)**. A sharp COVID-era demand shock (**$22.15M → $2.76M** in a single month) further exposed gaps in forecast accuracy and inventory planning.
  
 ---
 
 ## 📊 Key Insights
 
-### 4.1 Sales Show a Recurring Seasonal Pattern
-The monthly sales trend generally shows an increase during the early fiscal-year period, particularly from **September through December**, followed by a sharp decline around January and a comparatively stable period through the following months.
-
-**Business implication:** Inventory, procurement, and production planning should account for recurring demand peaks rather than relying solely on annual averages.
-
-> ⚠️ The exact peak month varies by fiscal year, so the pattern should be interpreted as recurring seasonality rather than a fixed October–November peak.
-
-### 4.2 Significant Demand Shock in 2020
-FY2020 contains a major disruption in monthly sales. Net sales declined from approximately **$22.15M in February → $2.76M in March**, before recovering to approximately **$20.06M by June**. The timing coincides with the global COVID-19 disruption period.
-
-**Business implication:** Such demand shocks can rapidly affect forecast accuracy, inventory planning, procurement, working capital, and revenue realization.
-
-> ⚠️ COVID-19 is a plausible external explanation for the disruption, but the dashboard alone does not establish causality.
-
-### 4.3 Revenue Growth Did Not Translate Into Sustainable Profitability
-FY2019 was the only displayed fiscal year with positive net profit, at approximately **+$2.46M**. Subsequent periods show significant negative profitability.
-
-> **Revenue growth alone is not translating into sustainable bottom-line performance.**
-
-The business should therefore focus not only on revenue growth but also on gross margin, commercial deductions, COGS, OPEX, and customer/product profitability.
-
-### 4.4 High Customer Revenue Concentration
-**Amazon, AtliQ Exclusive, and AtliQ e Store** consistently appear among the largest customers, together contributing approximately **one-third of revenue on average** across the analyzed periods.
-
-**Business implication:** This concentration creates both an opportunity and a risk — increasing exposure to customer churn, pricing pressure, contract changes, and revenue volatility.
-
-### 4.5 Desktop Emerged as a High-Growth Product Segment
-
-| Period | Desktop Revenue |
-|---|---|
-| FY2020 | $0.95M |
-| FY2021 | $46.43M |
-| 2022_EST YTD | $280.78M |
-
-**Business implication:** Management should evaluate whether the rapid growth is supported by sustainable demand, healthy margins, reliable forecasts, adequate inventory, and supplier capacity.
-
-> ⚠️ The 2022 figure is associated with the `2022_EST` period and should be interpreted as YTD/estimated-period performance rather than a directly comparable completed fiscal year.
-
-### 4.6 Revenue Is Concentrated in a Few Product Segments
-The top three product segments — **Notebook, Accessories, and Peripherals** — contribute approximately **79% of revenue on average** across the analyzed periods. A disruption in one of these segments could have a disproportionate effect on overall revenue.
-
-### 4.7 Geographic Concentration Creates Strategic Exposure
-**India, USA, and South Korea** consistently rank among the major revenue-generating markets. At the regional level, **APAC** is the strongest revenue-generating region, while **EU** demonstrates comparatively consistent positive profitability.
-
-> **The region generating the most revenue is not necessarily the region generating the strongest profitability.**
-
-### 4.8 Gross Margin Remains Relatively Stable but Under Pressure From Cost Structure
-Across the analyzed periods, COGS generally accounts for approximately **59–63% of net sales**, leaving gross margin in the approximate range of **37–41%**. At large revenue volumes, even a small change in gross margin can create a substantial financial impact.
-
-**Potential margin improvement levers:** supplier negotiations, product mix optimization, pricing strategy, cost reduction, customer-level margin analysis.
-
-### 4.9 Large Gap Between Gross Sales and Net Sales
-Net sales represent roughly **50% of gross sales** across several periods after accounting for deductions, indicating significant commercial leakage between gross sales and realized net sales.
-
-**Business implication:** A high-revenue customer may not necessarily be a high-profit customer after deductions.
-
-### 4.10 Forecast Accuracy and Inventory Risk Are Connected
-The Supply Chain analysis combines actual demand, forecast demand, forecast error, and inventory classification — highlighting both **Excess Stock (ES)** and **Out of Stock (OOS)** across products and categories, including major categories like Notebook, Accessories, and Peripherals appearing in OOS classifications.
-
-> ⚠️ The dashboard identifies the relationship between forecast performance and inventory risk; it does not independently prove a causal relationship.
-
+### 1. Growth isn't reaching the bottom line
+FY2019 was the only year with a **positive net profit (+$2.46M)** - every subsequent year turned negative. **COGS eats 59–63% of net sales**, and deductions strip away roughly **half of gross sales** before it's realized as net sales. 
+A high-revenue customer or product is not automatically a high-profit one.
+ 
+### 2. Revenue is highly concentrated and exposed
+- **3 customers** (Amazon, AtliQ Exclusive, AtliQ e Store) drive **~33% of revenue**
+- **3 product segments** (Notebook, Accessories, Peripherals) drive **~79% of revenue**
+- **APAC** leads on revenue, but **EU** is the more consistently profitable region
+A disruption to any one of these - customer, segment, or region - would hit the business disproportionately.
+ 
+### 3. Desktop is a breakout category, but needs a health check
+Desktop revenue jumped from **$0.95M (FY2020) → $46.43M (FY2021)**. Before scaling further, the business should confirm this growth is backed by sustainable demand, healthy margin, and reliable supply and not just a spike.
+ 
+### 4. Demand is seasonal
+Sales typically peak **Sept–Dec** each fiscal year, but FY2020 also saw a severe one-month collapse (**$22.15M → $2.76M**, coinciding with COVID-19) before recovering within months. Forecasting and inventory planning need to account for both normal seasonality and low-probability shocks.
+ 
+### 5. Forecast errors are driving real inventory risk
+Forecast accuracy tracked at the product and customer level shows a direct link to **Excess Stock and Out-of-Stock** occurrences, including in the highest-revenue categories (Notebook, Accessories, Peripherals).
+ 
 ---
-
+ 
 ## 🎯 Recommendations
-
-| # | Recommendation | Action |
-|---|---|---|
-| 5.1 | 📦 **Adopt a Demand-Sensitive Inventory Strategy** | Use historical seasonality and forecast performance to adjust inventory levels, increase coverage before demand peaks, and establish product-level safety-stock policies. |
-| 5.2 | 💧 **Reduce Commercial Leakage** | Analyze deductions by customer, product, market, channel, and fiscal year to identify where discounting is eroding revenue. |
-| 5.3 | ⚖️ **Prioritize Profitability Over Revenue Growth Alone** | Monitor the full Revenue → Net Sales → Gross Margin → OPEX → Net Profit chain to distinguish high-revenue growth from high-quality growth. |
-| 5.4 | 🗄️ **Optimize Inventory Across Product Categories** | Segment products by demand volatility, review safety-stock levels, and investigate recurring OOS/excess-stock categories. |
-| 5.5 | 🤝 **Reduce Customer Concentration Risk** | Develop secondary strategic accounts, expand underpenetrated customers, and evaluate customer profitability after deductions. |
-| 5.6 | 🔍 **Investigate Desktop Growth Before Scaling Further** | Evaluate demand sustainability, gross margin, forecast accuracy, and supplier capacity before further procurement commitments. |
-| 5.7 | 🧭 **Introduce Scenario-Based Planning** | Incorporate base-case, downside, upside, and demand-shock scenarios into supply-chain planning to build resilience. |
+ 
+| Recommendation | Why It Matters |
+|---|---|
+| **Make profitability the primary KPI, not revenue** | Track Net Sales → Gross Margin → OPEX → Net Profit together; identify and reduce commercial deductions eating ~50% of gross sales. |
+| **De-risk customer & product concentration** | Grow secondary accounts and segments so no single customer or category can disproportionately swing revenue. |
+| **Stress-test Desktop before further investment** | Validate demand durability, margin, and supplier capacity behind the $46M+ growth before committing more inventory spend. |
+| **Tighten demand & inventory planning** | Use seasonality and forecast-accuracy data to set product-level safety stock to cut ES/OOS risk. |
 
 ---
 
 ## 🛠 Tech Stack
 
-- **Microsoft Power BI** — interactive dashboards, data visualization, semantic modeling, executive reporting, drill-down and cross-filtering
-- **Power Query / M** — data extraction, cleaning, transformation, and preparation
-- **Power BI Semantic Model** — fact/dimension architecture, relationships, fiscal calendar, target & benchmark modeling, supporting analytical tables
-- **DAX & DAX Studio** — KPI development, P&L calculations, gross margin, net profit, YoY analysis, YTD/YTG calculations, forecast accuracy & error, benchmark comparisons, performance optimization
-- **MySQL** — sales data, forecast data, customer & product dimensions, cost data, deduction data
+- **Microsoft Power BI**: interactive dashboards, data visualization, semantic modeling, executive reporting, drill-down and cross-filtering
+- **Power Query / M**: data extraction, cleaning, transformation, and preparation
+- **Power BI Semantic Model**: fact/dimension architecture, relationships, fiscal calendar, target & benchmark modeling, supporting analytical tables
+- **DAX & DAX Studio**: KPI development, P&L calculations, gross margin, net profit, YoY analysis, YTD/YTG calculations, forecast accuracy & error, benchmark comparisons, performance optimization
+- **MySQL**: sales data, forecast data, customer & product dimensions, cost data, deduction data
 
 ---
 
