@@ -66,7 +66,9 @@ AtliQ Hardware follows a **September–August fiscal year** rather than a Januar
 ## 💡 Executive Summary
 
 AtliQ Hardware is **scaling revenue faster than it is scaling profit**. FY2019 was the only year in the dataset with a positive net profit (**+$2.46M**), while **COGS consumes 59–63% of net sales** and nearly **half of gross sales is lost to deductions** before it ever reaches the bottom line. Growth is also concentrated: the **top 3 product segments drive ~79% of revenue**, and just **3 customers account for roughly a third of sales**, while **Desktop** emerged as a breakout category, surging from **$0.95M (FY2020) → $46.43M (FY2021)**. A sharp COVID-era demand shock (**$22.15M → $2.76M** in a single month) further exposed gaps in forecast accuracy and inventory planning.
- 
+
+![](images/executive_view.jpg)
+
 ---
 
 ## 📊 Key Insights
