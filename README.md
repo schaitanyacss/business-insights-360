@@ -5,7 +5,7 @@
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)]()
 [![Type](https://img.shields.io/badge/type-BI%20reporting-blue)]()
 [![Industry](https://img.shields.io/badge/industry-electronics%20%2F%20supply%20chain-informational)]()
-[![Tool](https://img.shields.io/badge/tool-Power%20BI-yellow)]()
+[![Tool](https://img.shields.io/badge/tool-Power%20BI-orange)]()
 
 ---
 
